@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+ namespace: prometheus
+ name: slurm-exporter
+ labels:
+   app.kubernetes.io/instance: prometheus
+   app.kubernetes.io/name: slurm-exporter
+spec:
+ type: ClusterIP
+ ports:
+ - name: slurm-exporter
+   port: 8080
+   targetPort: 8080

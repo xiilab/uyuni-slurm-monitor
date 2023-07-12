@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+ namespace: prometheus
+ name: slurm-gpu-metrics
+ labels:
+   app.kubernetes.io/instance: prometheus
+   app.kubernetes.io/name: slurm-gpu-metrics
+spec:
+ type: ClusterIP
+ ports:
+ - name: slurm-gpu-metrics
+   port: 9400
+   targetPort: 9400

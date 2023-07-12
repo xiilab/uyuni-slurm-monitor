@@ -1,0 +1,16 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+ namespace: prometheus
+ name: slurm-node-exporter
+subsets:
+- addresses:
+  - ip: 192.168.1.46
+  - ip: 192.168.1.248
+  - ip: 192.168.2.34
+  - ip: 192.168.2.37
+  - ip: 192.168.2.38
+  - ip: 192.168.2.39 
+  ports: 
+  - name: slurm-node-exporter
+    port: 9100
